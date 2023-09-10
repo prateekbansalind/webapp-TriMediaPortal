@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="my-5 text-center">
+    <h2>Video Page</h2>
+
+    {% if error_message %}
+        <div class="alert alert-danger mt-4" role="alert">
+            {{ error_message }}
+        </div>
+    {% endif %}
+
+    {% if video_url %}
+        <div class="embed-responsive embed-responsive-16by9 mt-4">
+            <video controls class="embed-responsive-item">
+                <source src="{{ video_url }}" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
